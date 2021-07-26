@@ -1,0 +1,69 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Restaurants-API Documentation",
+    "description": "This is an restaurant API for use in Digital House integration project",
+    "version": "1.0.0",
+    "contact": {
+      "email": "guistrutzki.dev@gmail.com"
+    }
+  },
+  "paths": {
+    "/restaurants": {
+      "post": {
+        "tags": ["Restaurant"],
+        "summary": "Create a restaurant",
+        "description": "Create a new restaurant",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "coverImage": {
+                    "type": "string"
+                  },
+                  "lat": {
+                    "type": "string"
+                  },
+                  "lng": {
+                    "type": "string"
+                  },
+                  "logoImage": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "Madre Mia",
+                  "description": "Um bom restaurante",
+                  "address": "Rua Santa Cruz, 2200",
+                  "logoImage": "http://www.example.com/images/logo.png",
+                  "coverImage": "http://www.example.com/images/logo.png",
+                  "lat": "-31.76782033057898",
+                  "lng": "-52.33720257498689"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Restaurant already exists"
+          }
+        }
+      }
+    }
+  }
+}
