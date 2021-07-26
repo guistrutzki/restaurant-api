@@ -1,10 +1,16 @@
+import { inject, injectable } from 'tsyringe';
+
 import {
   IRestaurantsRepository,
   ICreateRestaurantDTO,
 } from '../../repositories/IRestaurantsRepository';
 
+@injectable()
 export class CreateRestaurantUseCase {
-  constructor(private restaurantsRepository: IRestaurantsRepository) {}
+  constructor(
+    @inject('RestaurantsRepository')
+    private restaurantsRepository: IRestaurantsRepository
+  ) {}
 
   async execute({
     address,

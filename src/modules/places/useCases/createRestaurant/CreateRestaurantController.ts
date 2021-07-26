@@ -1,15 +1,16 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 import { CreateRestaurantUseCase } from './CreateRestaurantUseCase';
 
 class CreateRestaurantController {
-  constructor(private createRestaurantUseCase: CreateRestaurantUseCase) {}
-
   async handle(req: Request, res: Response): Promise<Response> {
     const { address, coverImage, description, lat, lng, logoImage, name } =
       req.body;
 
-    await this.createRestaurantUseCase.execute({
+    const createRestaurantUseCase = container.resolve(CreateRestaurantUseCase);
+
+    await createRestaurantUseCase.execute({
       address,
       coverImage,
       description,
