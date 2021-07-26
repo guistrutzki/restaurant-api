@@ -63,6 +63,55 @@
             "description": "Restaurant already exists"
           }
         }
+      },
+      "get": {
+        "tags": ["Restaurant"],
+        "summary": "List all restaurants",
+        "description": "List all restaurants",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "lat": {
+                        "type": "string"
+                      },
+                      "lng": {
+                        "type": "string"
+                      },
+                      "coverImage": {
+                        "type": "string"
+                      },
+                      "logoImage": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
