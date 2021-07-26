@@ -3,13 +3,13 @@ import { Request, Response } from 'express';
 import { CreateRestaurantUseCase } from './CreateRestaurantUseCase';
 
 class CreateRestaurantController {
-  constructor(private createCategoryUseCase: CreateRestaurantUseCase) {}
+  constructor(private createRestaurantUseCase: CreateRestaurantUseCase) {}
 
   async handle(req: Request, res: Response): Promise<Response> {
     const { address, coverImage, description, lat, lng, logoImage, name } =
       req.body;
 
-    await this.createCategoryUseCase.execute({
+    await this.createRestaurantUseCase.execute({
       address,
       coverImage,
       description,
