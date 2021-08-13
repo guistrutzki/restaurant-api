@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Restaurants-API Documentation",
-    "description": "This is an restaurant API for use in Digital House integration project",
+    "description": "This is a restaurant API for use in an integration project at Digital House",
     "version": "1.0.0",
     "contact": {
       "email": "guistrutzki.dev@gmail.com"
