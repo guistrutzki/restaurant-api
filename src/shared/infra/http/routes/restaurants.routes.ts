@@ -1,7 +1,6 @@
+import { CreateRestaurantController } from '@modules/places/useCases/createRestaurant/CreateRestaurantController';
+import { ListRestaurantsController } from '@modules/places/useCases/listRestaurants/ListRestaurantsController';
 import { Router } from 'express';
-
-import { CreateRestaurantController } from '../modules/places/useCases/createRestaurant/CreateRestaurantController';
-import { ListRestaurantsController } from '../modules/places/useCases/listRestaurants/ListRestaurantsController';
 
 const restaurantsRoutes = Router();
 
