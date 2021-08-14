@@ -31,6 +31,6 @@ jobs:
             ls -a
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
-          user: ${{ secrets.SSS_USER }}
+          user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           
