@@ -24,12 +24,14 @@ jobs:
       - name: Build
         run: yarn build
         
-      - uses: appleboy/scp-action@master
+      - uses: fifsky/ssh-action@master
         with:
+          command: |
+            cd /tmp
+            ls -a
+            echo "env_var:$FIRST_NAME"
+            exit 1
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSS_USER }}
+          user: ${{ secrets.SSS_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: "., !node_modules"
-          target: "test"
-          
