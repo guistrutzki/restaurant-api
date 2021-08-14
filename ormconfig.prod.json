@@ -5,6 +5,7 @@
   "username": "docker",
   "password": "digitalhouse",
   "database": "restaurant-api",
+  "synchronize": true,
   "migrations": ["./dist/shared/infra/typeorm/migrations/*.js"],
   "entities": ["./dist/modules/**/entities/*.js"],
   "cli": {
