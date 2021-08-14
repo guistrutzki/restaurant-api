@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import cors from 'cors';
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
+app.use(cors());
 app.use(router);
 
 export { app };
