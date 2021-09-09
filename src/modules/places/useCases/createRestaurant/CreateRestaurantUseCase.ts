@@ -1,3 +1,4 @@
+import { AppError } from '@errors/AppError';
 import { inject, injectable } from 'tsyringe';
 
 import {
@@ -27,7 +28,7 @@ export class CreateRestaurantUseCase {
     );
 
     if (restaurantAlreadyExists) {
-      throw new Error('Restaurant already exists!');
+      throw new AppError('Restaurant already exists!');
     }
 
     this.restaurantsRepository.create({
