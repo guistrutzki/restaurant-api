@@ -27,6 +27,9 @@ class Restaurant {
   @Column()
   address: string;
 
+  @Column()
+  rating: number;
+
   @CreateDateColumn()
   created_at: Date;
 

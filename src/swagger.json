@@ -40,6 +40,9 @@
                   },
                   "logoImage": {
                     "type": "string"
+                  },
+                  "rating": {
+                    "type": "integer"
                   }
                 },
                 "example": {
@@ -49,7 +52,8 @@
                   "logoImage": "http://www.example.com/images/logo.png",
                   "coverImage": "http://www.example.com/images/logo.png",
                   "lat": "-31.76782033057898",
-                  "lng": "-52.33720257498689"
+                  "lng": "-52.33720257498689",
+                  "rating": 5
                 }
               }
             }
@@ -104,6 +108,9 @@
                       },
                       "created_at": {
                         "type": "string"
+                      },
+                      "rating": {
+                        "type": "integer"
                       }
                     }
                   }
