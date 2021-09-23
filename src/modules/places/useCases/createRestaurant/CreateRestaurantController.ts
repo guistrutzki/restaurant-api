@@ -14,7 +14,10 @@ class CreateRestaurantController {
       logoImage,
       name,
       rating,
+      gallery,
     } = req.body;
+
+    const galleryStringify = JSON.stringify(gallery);
 
     const createRestaurantUseCase = container.resolve(CreateRestaurantUseCase);
 
@@ -27,6 +30,7 @@ class CreateRestaurantController {
       logoImage,
       name,
       rating,
+      gallery: galleryStringify,
     });
 
     return res.status(201).send();

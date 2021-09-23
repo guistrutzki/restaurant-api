@@ -22,6 +22,7 @@ export class CreateRestaurantUseCase {
     logoImage,
     name,
     rating,
+    gallery,
   }: ICreateRestaurantDTO): Promise<void> {
     const restaurantAlreadyExists = await this.restaurantsRepository.findByName(
       name
@@ -40,6 +41,7 @@ export class CreateRestaurantUseCase {
       lng,
       logoImage,
       rating,
+      gallery,
     });
   }
 }

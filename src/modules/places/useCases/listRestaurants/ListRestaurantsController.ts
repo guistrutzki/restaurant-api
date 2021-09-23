@@ -9,7 +9,12 @@ class ListRestaurantsController {
 
     const allRestaurants = await listRestaurantsUseCase.execute();
 
-    return res.json(allRestaurants);
+    const parsedRestaurants = allRestaurants.map((eachRestaurant) => ({
+      ...eachRestaurant,
+      gallery: eachRestaurant.gallery ? JSON.parse(eachRestaurant.gallery) : [],
+    }));
+
+    return res.json(parsedRestaurants);
   }
 }
 

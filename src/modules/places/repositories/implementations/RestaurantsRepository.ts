@@ -22,6 +22,7 @@ class RestaurantsRepository implements IRestaurantsRepository {
     logoImage,
     name,
     rating,
+    gallery,
   }: ICreateRestaurantDTO): Promise<void> {
     const restaurant = this.repository.create({
       address,
@@ -32,6 +33,7 @@ class RestaurantsRepository implements IRestaurantsRepository {
       logoImage,
       name,
       rating,
+      gallery,
     });
 
     await this.repository.save(restaurant);

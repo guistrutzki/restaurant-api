@@ -9,6 +9,7 @@ interface ICreateRestaurantDTO {
   coverImage: string;
   logoImage: string;
   rating: number;
+  gallery: string;
 }
 
 interface IRestaurantsRepository {

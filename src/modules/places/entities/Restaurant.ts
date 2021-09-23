@@ -13,6 +13,9 @@ class Restaurant {
   description: string;
 
   @Column()
+  gallery: string;
+
+  @Column()
   lat: string;
 
   @Column()

@@ -49,6 +49,12 @@
                   },
                   "rating": {
                     "type": "integer"
+                  },
+                  "gallery": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "example": {
@@ -59,7 +65,8 @@
                   "coverImage": "http://www.example.com/images/logo.png",
                   "lat": "-31.76782033057898",
                   "lng": "-52.33720257498689",
-                  "rating": 5
+                  "rating": 5,
+                  "gallery": ["https://topview.com.br/wp-content/uploads/2017/09/restaurante-pelotas-5-e1529518056539.jpg"]
                 }
               }
             }
@@ -122,6 +129,12 @@
                       },
                       "rating": {
                         "type": "integer"
+                      },
+                      "gallery": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
                       }
                     }
                   }
