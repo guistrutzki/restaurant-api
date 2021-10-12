@@ -167,11 +167,70 @@
             "description": "E-mail already exists"
           }
         }
+      },
+      "put": {
+        "tags": ["User"],
+        "summary": "Update user data",
+        "description": "Update user data",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/UpdateUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Updated"
+          },
+          "400": {
+            "description": "Invalid password"
+          }
+        }
+      }
+    },
+    "/users/avatar": {
+      "patch": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": ["User"],
+        "summary": "Upload user's avatar",
+        "description": "Upload user's avatar",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "avatar": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Created"
+          }
+        }
       }
     },
     "/sessions": {
       "post": {
-        "tags": ["User"],
+        "tags": ["Session"],
         "summary": "Authenticate the user",
         "description": "Authenticate the user",
         "requestBody": {
@@ -227,6 +286,23 @@
           "type": "string"
         },
         "password": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateUser": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "oldPassword": {
           "type": "string"
         }
       }
