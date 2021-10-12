@@ -1,7 +1,7 @@
+import { ensuredAuthenticated } from '@middlewares/ensureAuthenticated';
 import { CreateRestaurantController } from '@modules/places/useCases/createRestaurant/CreateRestaurantController';
 import { ListRestaurantsController } from '@modules/places/useCases/listRestaurants/ListRestaurantsController';
 import { Router } from 'express';
-import { ensuredAuthenticated } from 'middlewares/ensureAuthenticated';
 
 const restaurantsRoutes = Router();
 
