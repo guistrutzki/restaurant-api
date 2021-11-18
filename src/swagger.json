@@ -66,7 +66,14 @@
                   "lat": "-31.76782033057898",
                   "lng": "-52.33720257498689",
                   "rating": 5,
-                  "gallery": ["https://topview.com.br/wp-content/uploads/2017/09/restaurante-pelotas-5-e1529518056539.jpg"]
+                  "gallery": ["https://topview.com.br/wp-content/uploads/2017/09/restaurante-pelotas-5-e1529518056539.jpg"],
+                  "menu": [
+                    {
+                      "title": "Macarrão",
+                      "image":
+                        "https://img.itdg.com.br/tdg/images/recipes/000/101/040/356212/356212_original.jpg?mode=crop&width=710&height=400"
+                    }
+                  ]
                 }
               }
             }
@@ -129,6 +136,20 @@
                       },
                       "rating": {
                         "type": "integer"
+                      },
+                      "menu": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "title": {
+                              "type": "string"
+                            },
+                            "image": {
+                              "type": "string"
+                            }
+                          }
+                        }
                       },
                       "gallery": {
                         "type": "array",
